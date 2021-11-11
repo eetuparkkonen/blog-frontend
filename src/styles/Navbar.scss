@@ -1,0 +1,70 @@
+$whitecolor: #fff;
+$contcolor: #fed6a8;
+$textcolor: #03363d;
+$btncolor: #17494d;
+
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-family: 'Dongle', sans-serif;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: $contcolor;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	ul {
+		display: flex;
+		width: 50%;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	li {
+		color: $textcolor;
+		font-size: 1.7em;
+		margin-left: 100px;
+		cursor: pointer;
+
+		&:hover {
+			border-bottom: 1px solid black;
+		}
+	}
+
+	button {
+		background-color: $btncolor;
+		color: $whitecolor;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 3px;
+		padding-bottom: 4px;
+		border: 2px solid $btncolor;
+		cursor: pointer;
+		text-decoration: none;
+		margin-left: 55px;
+		text-align: center;
+		font-size: 20px;
+		border-radius: 20px;
+		transition: ease-in 0.6s;
+
+		&:hover {
+			background: black;
+		}
+	}
+}
+
+.btnContainer {
+	display: flex;
+	width: 40%;
+	justify-content: flex-end;
+}
