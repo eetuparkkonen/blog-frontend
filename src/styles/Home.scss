@@ -1,0 +1,25 @@
+$contcolor: #fed6a8;
+$textcolor: #03363d;
+
+.homeContainer {
+	background: $contcolor;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 80vh;
+	max-width: 100vw;
+
+	h1 {
+		font-size: 5rem;
+		color: $textcolor;
+		font-weight: 700;
+	}
+
+	img {
+	}
+}
+
+.blogContainer {
+	display: flex;
+	justify-content: space-around;
+}
