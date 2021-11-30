@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useGlobalContext } from '../context/StateContext';
 
 export const api = axios.create({
 	baseURL: 'http://localhost:8000',
@@ -8,22 +7,19 @@ export const api = axios.create({
 
 api.defaults.withCredentials = true;
 
-export const interceptors: any {
+export const interceptors: any = {
+	setupInterceptors: (dispatch: any) => {
+		api.interceptors.response.use(
+			(response) => {
+				return response;
+			},
+			(error) => {
+				if (error.response.status === 401) {
+					dispatch({ type: 'SET_AUTH', payload: false });
+				}
 
-	
-  setupInterceptors: (dispatch: any, store: any) => {
-	
-      api.interceptors.response.use(response => {
-        return response;
-      }, error => {
-
-      if (error.response.status === 401) {
-        dispatch({ type: 'SET_AUTH', payload: false });
-      }
-
-      return Promise.reject(error);
-    });
-  }
+				return Promise.reject(error);
+			}
+		);
+	},
 };
-
-

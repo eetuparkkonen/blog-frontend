@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
-import { api } from '../services/api';
 import '../styles/Home.scss';
 import Logo from '../blog.jpg';
+import { Link } from 'react-router-dom';
 
 interface BlogI {
 	name: string;
@@ -10,16 +9,7 @@ interface BlogI {
 	_id?: string;
 }
 
-const Home = () => {
-	const [getblogs, setGetBlogs] = useState<BlogI[]>([]);
-
-	useEffect(() => {
-		api
-			.get('/posts')
-			.then((resp) => setGetBlogs(resp.data))
-			.catch((err) => console.log(err));
-	}, []);
-
+const Home = ({ fetchedBlogs }: any) => {
 	return (
 		<>
 			<div className='homeContainer'>
@@ -29,12 +19,13 @@ const Home = () => {
 				<img src={Logo} alt='Styled blog' />
 			</div>
 			<div className='blogContainer'>
-				{getblogs.map((blog: BlogI) => {
+				{fetchedBlogs.map((blog: BlogI) => {
 					return (
 						<div className='single-blog' key={blog._id}>
-							<h1>name: {blog.name}</h1>
-							<p>text: {blog.text}</p>
-							<p>email: {blog.email}</p>
+							<Link to={'/blog/' + blog._id}>See the whole blog post</Link>
+							<h1>Author: {blog.name}</h1>
+							<p>Text: {blog.text}</p>
+							<p>Email: {blog.email}</p>
 						</div>
 					);
 				})}

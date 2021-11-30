@@ -3,13 +3,11 @@ $contcolor: #fed6a8;
 $textcolor: #03363d;
 $btncolor: #17494d;
 
-
 nav {
 	position: relative;
 	top: 0;
 	left: 0;
 	background: $whitecolor;
-	padding: 10px;
 	display: flex;
 	align-items: center;
 	text-align: center;
@@ -26,10 +24,14 @@ nav {
 		color: $textcolor;
 		font-size: 1.7em;
 		margin-left: 100px;
-		cursor: pointer;
+	}
+
+	a {
+		color: $textcolor;
+		text-decoration: none;
 
 		&:hover {
-			border-bottom: 1px solid black;
+			color: $contcolor;
 		}
 	}
 

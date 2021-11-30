@@ -14,12 +14,30 @@ $textcolor: #03363d;
 		color: $textcolor;
 		font-weight: 700;
 	}
-
-	img {
-	}
 }
 
 .blogContainer {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	text-align: center;
+	margin-top: 40px;
+
+	.single-blog {
+		width: 70%;
+		margin: 25px;
+		background-color: #3dd1e7;
+		border-radius: 10px;
+		padding: 70px;
+		box-shadow: 4px 5px 20px -6px rgba(0, 0, 0, 0.75);
+		word-wrap: break-word;
+
+		h1 {
+			font-size: 3em;
+		}
+		p {
+			font-size: 2em;
+		}
+	}
 }

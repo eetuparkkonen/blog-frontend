@@ -4,3 +4,7 @@ export interface BlogI {
 	text: string;
 	_id?: string;
 }
+
+export interface ParamTypes {
+	id: string;
+}
